@@ -18,7 +18,7 @@ use_fxv2_oal 'on'
 is_cfxv2 'yes'
 
 files {
-    "client/data/*.*",
+    "locales/*.json",
 }
 
 

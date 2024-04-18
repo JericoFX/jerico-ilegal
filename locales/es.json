@@ -1,0 +1,22 @@
+{
+    "client":{
+      "weapons": {
+        "title": "Armas Ilegales",
+        "buy_weapons": "Comprar Armas"
+      },
+      "bullets": {
+        "title": "Balas Ilegales",
+        "buy_bullets": "Comprar Balas"
+      }
+    },
+    "server":{
+        "notify":{
+            "title_ilegal":"Compra Ilegal",
+            "description_ilegal_success":"Compraste %s",
+            "description_ilegal_error":"No tienes suficiente dinero negro %s \nNecesitas: %s"
+        },
+        "command":{
+            "help":"Marca en donde esta el Ped"
+        }
+    }
+}

@@ -1,3 +1,4 @@
+lib.locale()
 local QBCore = exports["qb-core"]:GetCoreObject()
 local Sconfig = require "server.sconfig"
 local ped = nil
@@ -32,16 +33,15 @@ RegisterNetEvent("fx-ilegal::server::compraDeArma", function(args)
         }, nil, nil)
 
         TriggerClientEvent('ox_lib:notify', source, {
-            title = "Ilegal Buy",
-            description = ("You buy %s"):format(exports.ox_inventory:Items()[args.hash].label),
+            title = locale("server.notify.title_ilegal"),
+            description = locale("server.notify.description_ilegal_success",exports.ox_inventory:Items()[args.hash].label),
             type = 'success', --'inform' or 'error' or 'success'or 'warning'
             duration = 5000
         })
     else
         TriggerClientEvent('ox_lib:notify', source, {
-            title = "Ilegal Buy",
-            description = ("You dont have enought black moneyu %s  \nMiss: $%s"):format(
-                exports.ox_inventory:Items()[args.hash].label, (math.floor(args.precio - money))),
+            title = locale("server.notify.title_ilegal"),
+            description = locale("server.notify.description_ilegal_error",exports.ox_inventory:Items()[args.hash].label, (math.floor(args.precio - money)))
             type = 'error', --'inform' or 'error' or 'success'or 'warning'
             duration = 5000
         })
@@ -59,7 +59,7 @@ CreateThread(function()
     Entity(ped).state:set("init", coords, true)
 end)
 lib.addCommand("ilegalPed", {
-    help = "Where the ped is",
+    help = locale("server.command.help"),
     params = {},
     restricted = 'group.admin'
 }, function(source, args, raw)

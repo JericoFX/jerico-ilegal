@@ -1,3 +1,4 @@
+lib.locale()
 local QBCore = exports["qb-core"]:GetCoreObject()
 local Config, PlayerPed = nil, nil
 local blip = nil
@@ -21,13 +22,13 @@ end)
 local function crearMenu()
     lib.registerContext({
         id = "_ilegal_armas",
-        title = "Ilegal Weapons",
+        title = locale("client.weapons.title"),
         options = Config.armas,
     })
 
     lib.registerContext({
         id = "_ilegal_balas",
-        title = "Ilegal Bullets",
+        title = locale("client.bullets.title"),
         options = Config.balas,
     })
 end
@@ -95,7 +96,7 @@ end
 local function createTarget(netID)
     exports.ox_target:addEntity(netID, {
         {
-            label = "Buy Weapons",
+            label = locale("client.weapons.buy_weapons"),
             name = "ilegal_armas",
             canInteract = function(entity, distance, coords, name, bone)
                 if IsEntityDead(entity) then return false end
@@ -110,7 +111,7 @@ local function createTarget(netID)
             end
         },
         {
-            label = "Buy Bullets",
+            label = locale("client.bullets.buy_weapons"),
             name = "ilegal_balas",
             canInteract = function(entity, distance, coords, name, bone)
                 local _coords = GetEntityCoords(cache.ped)

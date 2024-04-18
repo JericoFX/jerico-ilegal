@@ -1,0 +1,22 @@
+{
+  "client": {
+    "weapons": {
+      "title": "Ilegal Weapons",
+      "buy_weapons": "Buy Weapons"
+    },
+    "bullets": {
+      "title": "Ilegal Bullets",
+      "buy_bullets": "Buy Bullets"
+    }
+  },
+  "server": {
+    "notify": {
+      "title_ilegal": "Ilegal Buy",
+      "description_ilegal_success": "You Buy %s",
+      "description_ilegal_error": "You dont have enought black money %s \nYou Need: %s More"
+    },
+    "command": {
+      "help": "Create a blip on the map where the ped is"
+    }
+  }
+}
